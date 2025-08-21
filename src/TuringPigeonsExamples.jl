@@ -5,7 +5,7 @@ using Pigeons, DynamicPPL, LinearAlgebra
 include("turing-galaxy.jl") 
 provide_target(::Val{:galaxy}) = TuringLogPotential(GalaxyTuring())
 
-provide_target(::Val{:unid_model}) = Pigeons.toy_turing_target(2)
+provide_target(::Val{:unid_model}) = Pigeons.toy_turing_unid_target()
 
 include("$(dirname(dirname(Base.pathof(Pigeons))))/test/supporting/turing_models.jl")
 provide_target(::Val{:flip_mixture}) = TuringLogPotential(flip_mixture())
